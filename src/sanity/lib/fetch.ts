@@ -130,7 +130,11 @@ export async function fetchCaseStudyBySlug(slug: string): Promise<CaseStudyData 
     imgGrid3Stack: raw.imgGrid3Stack ?? false,
     spaceMetrics: raw.spaceMetrics?.length ? raw.spaceMetrics : undefined,
     solutionIntro: raw.solutionIntro,
-    solutionTiles: raw.solutionTiles || [],
+    solutionTiles: (raw.solutionTiles || []).map((t: { title: string; text: string; image?: unknown }) => ({
+      title: t.title,
+      text: t.text,
+      image: resolveImage(t.image),
+    })),
     solutionImage: resolveImage(raw.solutionImage),
     solutionCaption: raw.solutionCaption || undefined,
     materials: raw.materials?.length ? raw.materials : undefined,

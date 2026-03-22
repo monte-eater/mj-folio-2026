@@ -377,9 +377,10 @@ export default defineType({
           fields: [
             defineField({ name: "title", type: "string", title: "Title" }),
             defineField({ name: "text", type: "text", title: "Text", rows: 3 }),
+            defineField({ name: "image", type: "image", title: "Image", options: { hotspot: true } }),
           ],
           preview: {
-            select: { title: "title", subtitle: "text" },
+            select: { title: "title", subtitle: "text", media: "image" },
           },
         },
       ],

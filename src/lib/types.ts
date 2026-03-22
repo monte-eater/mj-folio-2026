@@ -34,7 +34,7 @@ export interface CaseStudyData {
   spaceMetrics?: { area: string; unit: string; label: string }[];
 
   solutionIntro: string;
-  solutionTiles: { title: string; text: string }[];
+  solutionTiles: { title: string; text: string; image?: string }[];
   solutionImage?: string;
   solutionCaption?: string;
   materials?: { name: string; spec: string; use: string; swatch: string }[];
