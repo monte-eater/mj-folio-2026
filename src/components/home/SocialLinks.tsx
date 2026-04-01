@@ -14,7 +14,7 @@ export default function SocialLinks() {
         className="soc-link"
       >
         <span>Email</span>
-        <svg width="28" height="24" viewBox="0 0 28 24" fill="none">
+        <svg aria-hidden="true" width="28" height="24" viewBox="0 0 28 24" fill="none">
           <rect x="1" y="1" width="26" height="22" rx="4" fill="currentColor" />
           <path
             d="M5 7.5l9 6 9-6"
@@ -34,6 +34,7 @@ export default function SocialLinks() {
       >
         <span>LinkedIn</span>
         <svg
+          aria-hidden="true"
           width="24"
           height="24"
           viewBox="0 0 800 800"
@@ -53,7 +54,7 @@ export default function SocialLinks() {
         rel="noopener noreferrer"
       >
         <span>Youtube</span>
-        <svg width="28" height="24" viewBox="0 0 28 24" fill="none">
+        <svg aria-hidden="true" width="28" height="24" viewBox="0 0 28 24" fill="none">
           <rect x="1" y="1" width="26" height="22" rx="4" fill="currentColor" />
           <path d="M11 8.5l7 3.5-7 3.5V8.5Z" fill="white" />
         </svg>

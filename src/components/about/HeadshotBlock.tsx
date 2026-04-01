@@ -15,6 +15,7 @@ export default function HeadshotBlock({ src }: HeadshotBlockProps) {
           alt="Montague Joachim"
           width={500}
           height={500}
+          sizes="(max-width: 1024px) 100vw, 35vw"
           style={{
             width: "100%",
             aspectRatio: "1 / 1",

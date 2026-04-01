@@ -23,6 +23,7 @@ export default function ProductRange({ variants, caption }: ProductRangeProps) {
                 alt={v.name}
                 width={400}
                 height={200}
+                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 32vw"
                 style={{ width: "100%", height: "auto", display: "block" }}
               />
             )}

@@ -15,6 +15,7 @@ export default function ImgFull({ src, alt, caption }: ImgFullProps) {
         alt={alt ?? ""}
         width={1200}
         height={600}
+        sizes="(max-width: 1024px) 100vw, 65vw"
         style={{ width: "100%", height: "auto" }}
       />
       {caption && <div className="img-caption">{caption}</div>}

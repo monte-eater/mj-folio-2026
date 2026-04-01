@@ -22,6 +22,7 @@ export default function PersonaStrip({ personas }: PersonaStripProps) {
               alt={persona.name}
               width={400}
               height={400}
+              sizes="(max-width: 768px) 100vw, 32vw"
               style={{
                 width: "100%",
                 height: "auto",

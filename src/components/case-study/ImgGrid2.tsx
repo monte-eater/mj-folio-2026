@@ -23,6 +23,7 @@ export default function ImgGrid2({ items, stack }: ImgGrid2Props) {
             alt={item.alt}
             width={600}
             height={400}
+            sizes="(max-width: 768px) 100vw, 32vw"
             style={{ width: "100%", height: "auto", border: "1px solid rgba(37,37,37,0.12)" }}
           />
           {item.caption && <div className="img-caption">{item.caption}</div>}

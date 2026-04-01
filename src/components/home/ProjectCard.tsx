@@ -23,6 +23,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           alt={project.title}
           width={1200}
           height={800}
+          sizes="(max-width: 1024px) 100vw, 32vw"
           style={{ width: "100%", height: "auto", display: "block", borderRadius: 8 }}
         />
       ) : (
