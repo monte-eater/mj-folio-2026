@@ -20,8 +20,8 @@ export default function PersonaStrip({ personas }: PersonaStripProps) {
             <Image
               src={persona.image}
               alt={persona.name}
-              width={400}
-              height={400}
+              width={800}
+              height={800}
               sizes="(max-width: 768px) 100vw, 32vw"
               style={{
                 width: "100%",

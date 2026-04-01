@@ -21,9 +21,9 @@ export default function ImgGrid3({ items, stack }: ImgGrid3Props) {
           <Image
             src={item.src!}
             alt={item.alt}
-            width={400}
-            height={300}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 22vw"
+            width={1200}
+            height={900}
+            sizes={stack ? "(max-width: 1024px) 100vw, 65vw" : "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 22vw"}
             style={{ width: "100%", height: "auto", border: "1px solid rgba(37,37,37,0.12)" }}
           />
           {item.caption && <div className="img-caption">{item.caption}</div>}
