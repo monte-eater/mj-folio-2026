@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import TopBar from "@/components/layout/TopBar";
 import Copyright from "@/components/layout/Copyright";
@@ -38,6 +39,43 @@ export async function generateStaticParams() {
 
 interface CaseStudyPageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: CaseStudyPageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  let cs: CaseStudyData | undefined | null;
+  if (isSanityConfigured()) {
+    cs = await fetchCaseStudyBySlug(slug);
+  } else {
+    cs = getCaseStudy(slug);
+  }
+
+  if (!cs) return {};
+
+  const pageTitle = `${cs.projectName} — Montague Joachim`;
+  const ogImages = cs.heroImage
+    ? [{ url: cs.heroImage, width: 1200, height: 630, alt: cs.projectName }]
+    : undefined;
+
+  return {
+    title: pageTitle,
+    description: cs.tldr,
+    openGraph: {
+      title: pageTitle,
+      description: cs.tldr,
+      url: `/case-study/${slug}`,
+      images: ogImages,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description: cs.tldr,
+      images: ogImages?.map((img) => img.url),
+    },
+  };
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {

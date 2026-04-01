@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import TopBar from "@/components/layout/TopBar";
 import Copyright from "@/components/layout/Copyright";
 import TwoColumnLayout from "@/components/layout/TwoColumnLayout";
@@ -11,8 +12,23 @@ import ToolsRow from "@/components/about/ToolsRow";
 import EducationSection from "@/components/about/EducationSection";
 import { isSanityConfigured, fetchAboutPage, AboutPageData } from "@/sanity/lib/fetch";
 
-export const metadata = {
-  title: "About \u2014 Montague Joachim",
+const aboutTitle = "About — Montague Joachim";
+const aboutDescription =
+  "UX/UI Designer with 13+ years across industrial design, retail spatial planning, and digital experimentation. Based in Melbourne, AU.";
+
+export const metadata: Metadata = {
+  title: aboutTitle,
+  description: aboutDescription,
+  openGraph: {
+    title: aboutTitle,
+    description: aboutDescription,
+    url: "/about",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: aboutTitle,
+    description: aboutDescription,
+  },
 };
 
 function AboutLeftCol({ data }: { data: AboutPageData | null }) {
